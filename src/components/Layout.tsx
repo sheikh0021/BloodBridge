@@ -39,14 +39,16 @@ export function Shell() {
     <div className={`min-h-svh ${lowInternet ? 'sms-mode' : ''}`}>
       <header className="sticky top-0 z-30 border-b border-line/80 bg-ivory/90 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3">
-          <Link to={currentUser ? '/app' : '/'} onClick={() => setOpen(false)} className="flex items-center gap-3">
-            <Logo size="sm" />
-            <span className="hidden border-l border-line pl-3 text-[11px] leading-tight text-muted sm:block">
-              Made with love
-              <br />
-              by Sheikh Rayhaan
-            </span>
-          </Link>
+          <div className="flex min-w-0 items-center gap-2">
+            <Link to={currentUser ? '/app' : '/'} onClick={() => setOpen(false)} className="shrink-0">
+              <Logo size="sm" />
+            </Link>
+            <p className="truncate rounded-full bg-amber/25 px-2.5 py-1 text-xs ring-1 ring-amber/50 sm:px-3 sm:text-sm">
+              <span className="font-semibold text-blood-deep">BloodBridge</span>
+              <span className="text-blood-deep/70"> by </span>
+              <span className="font-display text-sm text-blood sm:text-base">Sheikh Rayhaan</span>
+            </p>
+          </div>
           <nav className="hidden items-center gap-1 md:flex">
             {links.map((l) => (
               <NavLink
@@ -165,9 +167,10 @@ export function Shell() {
             <p className="mt-2">Free for patients and donors. Phone shared only after accept.</p>
           </div>
         </div>
-        <p className="border-t border-ivory/10 py-4 text-center text-sm text-ivory/80">
-          Made with love by <span className="font-semibold text-ivory">Sheikh Rayhaan</span>
-        </p>
+        <div className="border-t border-ivory/15 px-4 py-8 text-center">
+          <p className="text-sm font-medium uppercase tracking-[0.22em] text-amber">Made with love by</p>
+          <p className="mt-2 font-display text-4xl text-ivory md:text-5xl">Sheikh Rayhaan</p>
+        </div>
       </footer>
     </div>
   )
