@@ -1,0 +1,68 @@
+@import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
+
+@theme {
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+  --color-blood: #8b1530;
+  --color-blood-deep: #4a0b18;
+  --color-ivory: #f6efe4;
+  --color-paper: #fffaf3;
+  --color-ink: #1c1214;
+  --color-muted: #6b575c;
+  --color-amber: #d4922a;
+  --color-line: #e6d8c8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: var(--color-ink);
+  background: var(--color-ivory);
+}
+
+h1,
+h2,
+h3,
+.font-display {
+  font-family: var(--font-display);
+}
+
+.leaflet-container {
+  font-family: var(--font-sans);
+  background: #eadcc8;
+}
+
+.map-pin {
+  background: transparent;
+  border: none;
+}
+
+.sms-mode {
+  filter: grayscale(0.12);
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rise {
+  animation: rise 0.5s ease both;
+}
